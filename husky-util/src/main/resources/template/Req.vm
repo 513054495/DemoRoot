@@ -1,0 +1,19 @@
+package $package;
+
+import com.infinitus.husky.req.CommonReq;
+import lombok.Getter;
+import lombok.Setter;
+
+public class $className extends CommonReq {
+    #foreach ($type in $types)
+        #set ($i=$velocityCount)
+        #foreach ($field in $fields)
+            #if( $i == $velocityCount)
+            @Getter
+            @Setter
+            private $type $field ;
+
+            #end
+        #end
+    #end
+}

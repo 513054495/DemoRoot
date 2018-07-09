@@ -1,0 +1,9 @@
+package $package;
+
+import $importDomainClass;
+import com.infinitus.husky.service.BaseService;
+import org.springframework.data.repository.CrudRepository;
+
+public interface $className extends CrudRepository<$beanName,Integer>,BaseService {
+
+}

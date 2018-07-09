@@ -1,0 +1,37 @@
+package $package;
+
+import com.infinitus.husky.domain.BaseDomain;
+import lombok.*;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Entity
+@Table(name="$tableName")
+public class $className extends BaseDomain {
+
+private static final long serialVersionUID = 1L;
+
+@Getter
+@Setter
+@Id
+@GeneratedValue
+private int id;
+
+#foreach ($type in $types)
+#set ($i=$velocityCount)
+#foreach ($field in $fields)
+#if( $i == $velocityCount)
+@Getter
+@Setter
+private $type $field ;
+
+#end
+#end
+#end
+}
